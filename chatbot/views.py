@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def chatbot(request):
-    pass
+    return render(request, 'chatbot.html')
