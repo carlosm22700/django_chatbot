@@ -5,6 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
+openai = "*"
+transformers = "*"
+torch = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
