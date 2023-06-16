@@ -2,8 +2,11 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib import auth
 from django.contrib.auth.models import User
+from .models import Chat
 import openai
 import os
+
+from django.utils import timezone
 
 
 openai.api_key = os.environ.get('OPENAI_API_KEY')
@@ -27,6 +30,10 @@ def chatbot(request):
     if request.method == 'POST':
         message = request.POST.get('message')
         response = ask_openai(message)
+
+        chat = Chat(user=request.user, message=message,
+                    response=response, created_at=timezone.now)
+        chat.save()
         return JsonResponse({'message': message, 'response': response})
     return render(request, 'chatbot.html')
 
