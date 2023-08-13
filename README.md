@@ -16,7 +16,6 @@ This is a Chatbot application that utilizies OpenAI's powerful language-model.
 
 1. Log in or sign up to access saved user data
 
-![Chat](/screenshots/user1.png "Chat")
 ![Chat2](/screenshots/user2.png "Chat2")
 
 2. Once logged in, you will land on a the chat page that displays your conversation history.
